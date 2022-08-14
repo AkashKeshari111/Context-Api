@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { ThemeContext } from "./ContextApi/ThemeContext";
+import { useContext } from "react";
+import Login from "./Pages/Login";
+import Status from "./Pages/Status";
+import AllRoutes from "./Pages/AllRoutes";
 
 function App() {
+  const { ToggleTheme, theme } = useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={theme ? "dark" : "light"}>
+      <Navbar />
+      <button onClick={ToggleTheme}>{theme ? "Light" : "Dark"}</button>
+      {/* <Login/>
+      <Status/> */}
+      <AllRoutes />
     </div>
   );
 }

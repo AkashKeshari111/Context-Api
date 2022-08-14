@@ -1,0 +1,10 @@
+.active{
+    color: red;
+    text-decoration: none;
+    padding: 1rem;
+}
+.default{
+    color:unset;
+    text-decoration: none;
+    padding: 1rem;
+}
